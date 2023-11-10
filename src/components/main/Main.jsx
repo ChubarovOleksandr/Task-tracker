@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import m from './Main.module.css'
-import Tasks from './tasks/Tasks';
+import TasksTable from './tasks/TasksContainer';
+import TimeBlock from './timeBlock/TimeBlock';
 
 let Main = () => {
 
@@ -38,10 +39,8 @@ let Main = () => {
 
     return ( 
         <div className={m.main}>
-            <div className={m.time_block}>
-                <span>{currentTime}</span>
-            </div>
-            <Tasks currentTime={currentTime}/>
+            <TimeBlock currentTime={currentTime} />
+            <TasksTable currentTime={currentTime}/>
         </div>
      );
 }

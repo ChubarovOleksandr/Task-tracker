@@ -1,7 +1,16 @@
-let initialState = {
+const ADD_TASK = 'ADD_TASK'
 
+const taskReducer = (state = null, action) => {
+    switch (action.type) {
+        case ADD_TASK:
+            
+            return state;
+    
+        default:
+            return state;
+    }
 }
 
-let taskReducer = (state = initialState, action) => {
+export const addTask = (data) => ({type: ADD_TASK, taskInfo: data});
 
-}
+export default taskReducer;
