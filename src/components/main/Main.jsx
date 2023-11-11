@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import m from './Main.module.css'
+import './Main.css'
 import TasksTable from './tasks/TasksContainer';
 import TimeBlock from './timeBlock/TimeBlock';
 
@@ -41,7 +41,7 @@ let Main = () => {
     let currentTime = `${date.hours}:${date.minutes}:${date.second}`
 
     return ( 
-        <div className={m.main}>
+        <div className={'main'}>
             {/* <TimeBlock currentTime={currentTime} /> */}
             <TasksTable currentTime={currentTime} addZero={addZero}/>
         </div>

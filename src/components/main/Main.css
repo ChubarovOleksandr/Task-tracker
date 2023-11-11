@@ -33,7 +33,7 @@
     border-radius: 35px;
 }
 
-/* TABLE HEADER STYLES */
+/* TABLE STYLES */
 
 .table__line {
     display: flex;
@@ -45,6 +45,10 @@
     height: 65px;
     margin-bottom: 15px;
 }
+.table__line.done {
+    transition: all .9s ease;
+    background: rgba(0, 128, 0, 0.734);
+}
 
 .time__column {
     display: flex;
@@ -53,7 +57,9 @@
     color: grey;
     font-size: 18px;
     flex: 1;
-    border-right: 2px solid grey;
+}
+.time__column.time__column_task {
+    color: #Fff;
 }
     .left__part {
         margin-right: 7px;
@@ -74,6 +80,10 @@
 .name__column {
     flex: 5;
     border-right: 2px solid grey;
+    border-left: 2px solid grey;
+    height: 33px;
+    display: flex;
+    align-items: center;
 }
     .name__inputs {
         margin: 0 50px;
@@ -81,7 +91,6 @@
         color: #fff;
         background: none;
         resize: none;
-        width: 90%;
         font-family: 'Open Sans';
     }
     .task__name {
@@ -100,8 +109,14 @@
     button {
         background: none;
     }
-    .add_icon {
+    .add_icon, .delete_icon, .done_icon {
         width: 35px;
         height: 35px;
-        cursor: pointer
+        cursor: pointer;
+    }
+    .edit_icon {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin: 0 20px;
     }

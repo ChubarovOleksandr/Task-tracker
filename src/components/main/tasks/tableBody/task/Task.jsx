@@ -1,28 +1,33 @@
-import m from '../../../Main.module.css'
+import React, { useState } from 'react';
+import '../../../Main.css'
 
 let Task = (props) => {
 
-    return <div className={m.table__line}>
-        <div className={m.time__column}>
-            <div className={m.left__part}>
-                <span className={m.time__spans}>{props.timeStartHour}</span>
+    let [isDone, setIsDone] = useState(false);
+
+    let taskDone = `table__line ${isDone ? 'done' : ''}`
+
+    return <div className={taskDone}>
+        <div className={'time__column'}>
+            <div className={'left__part'}>
+                <span className={'time__spans'}>{props.timeStartHour}</span>
                 :
-                <span className={m.time__spans}>{props.timeStartMinute}</span>
+                <span className={'time__spans'}>{props.timeStartMinute === null ? '00' : props.timeStartMinute}</span>
             </div>
             -
-            <div className={m.right__part}>
-                <span className={m.time__spans}>{props.timeEndHour}</span>
+            <div className={'right__part'}>
+                <span className={'time__spans'}>{props.timeEndHour}</span>
                 :
-                <span className={m.time__spans}>{props.timeEndMinute}</span>
+                <span className={'time__spans'}>{props.timeEndMinute === null ? '00' : props.timeEndMinute}</span>
             </div>
         </div>
-        <div className={m.name__column}>
-            <p className={m.task__name + ' ' + m.inProgress}>{props.taskName}</p>
+        <div className={'name__column'}>
+            <p className={'task__name inProgress'}>{props.taskName}</p>
         </div>
-        <div className={m.buttons__column}>
-            <button>Done</button>
-            <button>Change</button>
-            <button>Delete</button>
+        <div className={'buttons__column'}>
+            <button><img className={'done_icon'} onClick={()=> setIsDone(true)} src="done.png" alt="done-icon" /></button>
+            <button><img className={'edit_icon'} src="edit.png" alt="edit-icon" /></button>
+            <button><img className={'delete_icon'} src="delete.png" alt="delete-icon" /></button>
         </div>
     </div>
 }

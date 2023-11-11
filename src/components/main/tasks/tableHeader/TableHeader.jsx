@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import m from '../../Main.module.css'
+import '../../Main.css'
 import { validate } from './validate';
 
 const TableHeader = (props) => {
@@ -25,37 +25,37 @@ const TableHeader = (props) => {
     }
     
     return (
-        <div className={m.table__line}>
-            <div className={m.time__column}>
-                <div className={m.left__part}>
-                    <input className={m.time__inputs} 
+        <div className={'table__line'}>
+            <div className={'time__column'}>
+                <div className={'left__part'}>
+                    <input className={'time__inputs'} 
                             onChange={(e) => timeStart.current.hours = +e.target.value} 
                             type="number" 
                             placeholder='12' 
                             maxLength={2} />
                     :
-                    <input className={m.time__inputs} 
+                    <input className={'time__inputs'} 
                             onChange={(e) => timeStart.current.minutes = +e.target.value} 
                             type="number" 
                             placeholder='00' 
                             maxLength={2} />
                 </div>
                 -
-                <div className={m.right__part}>
-                    <input  className={m.time__inputs} 
+                <div className={'right__part'}>
+                    <input  className={'time__inputs'} 
                             onChange={(e) => timeEnd.current.hours = +e.target.value} 
                             type="number" placeholder='18' 
                             maxLength={2} />
                     :
-                    <input  className={m.time__inputs} 
+                    <input  className={'time__inputs'} 
                             onChange={(e) => timeEnd.current.minutes = +e.target.value} 
                             type="number" 
                             placeholder='00' 
                             maxLength={2} />
                 </div>
             </div>
-            <div className={m.name__column}>
-                <textarea className={m.name__inputs}
+            <div className={'name__column'}>
+                <textarea className={'name__inputs'}
                           onChange={(e) => taskName.current = e.target.value}
                           name="task-name" 
                           maxLength={80} 
@@ -63,9 +63,9 @@ const TableHeader = (props) => {
                           rows="1" 
                           placeholder='Enter a task name...'></textarea>
             </div>
-            <div className={m.buttons__column}>
+            <div className={'buttons__column'}>
                 <button onClick={onSubmite}>
-                    <img src="add.png" className={m.add_icon} alt="true" />
+                    <img src="add.png" className={'add_icon'} alt="true" />
                 </button>
             </div>
         </div>

@@ -2,7 +2,7 @@ const ADD_TASK = 'ADD_TASK'
 
 let initialState = {
     tasks: [
-        {id: 0, tEH: 13, tEM: 13, tSH: 12, tSM: 12, taskName: "Watch TV"}
+        {id: 0, tEH: 14, tEM: '00', tSH: 12, tSM: 30, taskName: "Watch TV"}
     ]
 }
 
@@ -10,9 +10,9 @@ const taskReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_TASK:
             let currentTasks = [...state.tasks];
-            let newTask = {...action.taskInfo, id: currentTasks.length, status: 1}   // status - 1: in progress 
-            currentTasks.push(newTask)                                               // status - 2: done
-            return {...state, tasks: currentTasks};                                  // status - 3: fail
+            let newTask = {...action.taskInfo, id: currentTasks.length}  
+            currentTasks.push(newTask)                                               
+            return {...state, tasks: currentTasks};                                  
         default:
             return state;
     }
