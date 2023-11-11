@@ -10,7 +10,7 @@ let TasksTable = (props) => {
     return (
         <div className={m.tasks__wrapper}>
             <div className={m.tasks__table}>
-                <TableHeader />
+                <TableHeader addZero={props.addZero}/>
                 <TableBody />
             </div>
         </div>

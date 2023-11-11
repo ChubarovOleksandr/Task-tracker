@@ -40,7 +40,7 @@ let Main = () => {
     return ( 
         <div className={m.main}>
             <TimeBlock currentTime={currentTime} />
-            <TasksTable currentTime={currentTime}/>
+            <TasksTable currentTime={currentTime} addZero={addZero}/>
         </div>
      );
 }
