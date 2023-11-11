@@ -35,23 +35,24 @@
 
 /* TABLE HEADER STYLES */
 
-.first__line {
+.table__line {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(50, 56, 77, 1);
     padding: 15px 20px;
     border-radius: 35px;
+    height: 65px;
+    margin-bottom: 15px;
 }
 
-.first__column {
+.time__column {
     display: flex;
     justify-content: center;
     align-items: center;
     color: grey;
     font-size: 18px;
     flex: 1;
-    height: 30px;
     border-right: 2px solid grey;
 }
     .left__part {
@@ -60,8 +61,7 @@
     .right__part {
         margin-left: 7px;
     }
-
-    .time__inputs {
+    .time__inputs, .time__spans {
         text-align: center;
         width: 20px;
         font-size: 18px;
@@ -71,11 +71,10 @@
         font-family: 'Open Sans';
     }
 
-.second__column {
+.name__column {
     flex: 5;
     border-right: 2px solid grey;
 }
-
     .name__inputs {
         margin: 0 50px;
         font-size: 22px;
@@ -85,8 +84,15 @@
         width: 90%;
         font-family: 'Open Sans';
     }
-
-.third__column {
+    .task__name {
+        margin: 0 50px;
+        font-size: 22px;
+        font-family: 'Open Sans';
+    }
+    .inProgress {
+        color: #fff;
+    }
+.buttons__column {
     flex: 1;
     display: flex;
     justify-content: center;

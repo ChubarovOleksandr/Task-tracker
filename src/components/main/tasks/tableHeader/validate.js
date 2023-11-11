@@ -1,4 +1,4 @@
-export function validate(timeStart, timeEnd, addZero) {
+export function validate(timeStart, timeEnd, taskName, addZero) {
     let error = 0;
 
     //validate time from
@@ -38,12 +38,18 @@ export function validate(timeStart, timeEnd, addZero) {
         error++
     }
 
+    if(taskName !== String && taskName.length < 1) {
+        alert('Укажите название задачи');
+        error++
+    }
+
     if(error === 0) {
         return {
             tSH: addZero(timeStart.current.hours), //tSH - time start hours
             tSM: addZero(timeStart.current.minutes), // tSH - time start minutes
-            tEH: addZero(timeEnd.current.hours),
-            tEM: addZero(timeEnd.current.minutes)
+            tEH: addZero(timeEnd.current.hours), // tEH - time end hours
+            tEM: addZero(timeEnd.current.minutes), // tEM - time end minutes
+            taskName: taskName,
         }
     } else {
         return error;

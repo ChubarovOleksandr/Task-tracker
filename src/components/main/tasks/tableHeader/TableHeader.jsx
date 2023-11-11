@@ -17,15 +17,16 @@ const TableHeader = (props) => {
     let taskName = useRef('');
 
     let onSubmite = () => {
-        let response = validate(timeStart, timeEnd, props.addZero);
+        let response = validate(timeStart, timeEnd, taskName.current, props.addZero);
+        
         if (isNaN(response)) {
-            props.addTask(response, taskName.current);
+            props.addTask(response);
         }
     }
     
     return (
-        <div className={m.first__line}>
-            <div className={m.first__column}>
+        <div className={m.table__line}>
+            <div className={m.time__column}>
                 <div className={m.left__part}>
                     <input className={m.time__inputs} 
                             onChange={(e) => timeStart.current.hours = +e.target.value} 
@@ -53,7 +54,7 @@ const TableHeader = (props) => {
                             maxLength={2} />
                 </div>
             </div>
-            <div className={m.second__column}>
+            <div className={m.name__column}>
                 <textarea className={m.name__inputs}
                           onChange={(e) => taskName.current = e.target.value}
                           name="task-name" 
@@ -62,7 +63,7 @@ const TableHeader = (props) => {
                           rows="1" 
                           placeholder='Enter a task name...'></textarea>
             </div>
-            <div className={m.third__column}>
+            <div className={m.buttons__column}>
                 <button onClick={onSubmite}>
                     <img src="add.png" className={m.add_icon} alt="true" />
                 </button>
