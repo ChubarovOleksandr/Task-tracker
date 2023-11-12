@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { addTask } from "../../../redux/task-reducer";
+import { addTask, updateTaskStatus, deleteTask, changeTask } from "../../../redux/task-reducer";
 import TasksTable from "./TasksTable";
 
 const mapStateToProps = (state) => {
@@ -8,4 +8,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps, { addTask })(TasksTable);
+export default connect(mapStateToProps, { addTask, updateTaskStatus, deleteTask, changeTask })(TasksTable);

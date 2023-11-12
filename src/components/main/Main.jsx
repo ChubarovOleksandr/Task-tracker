@@ -9,13 +9,13 @@ let Main = () => {
 
     //update time by every second
 
-   /*  useEffect(() => {
+   useEffect(() => {
         let intervalId = setInterval(() => {
             setTime(new Date());
         }, 1000);
 
         return () => clearInterval(intervalId)
-    }, []) */
+    }, []) 
 
     //add zero if number < 10
 
@@ -23,7 +23,7 @@ let Main = () => {
         if(number === null) {
             return number
         }
-        return number < 10 ? '0' + number : number;
+        return number < 10 && number > 0 ? '0' + number : number;
     }
 
     let date = {
@@ -42,7 +42,7 @@ let Main = () => {
 
     return ( 
         <div className={'main'}>
-            {/* <TimeBlock currentTime={currentTime} /> */}
+            <TimeBlock currentTime={currentTime} /> 
             <TasksTable currentTime={currentTime} addZero={addZero}/>
         </div>
      );

@@ -59,7 +59,7 @@ const TableHeader = (props) => {
                           onChange={(e) => taskName.current = e.target.value}
                           name="task-name" 
                           maxLength={80} 
-                          cols="30" 
+                          cols="75" 
                           rows="1" 
                           placeholder='Enter a task name...'></textarea>
             </div>

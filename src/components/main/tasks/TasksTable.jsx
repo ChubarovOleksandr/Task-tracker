@@ -8,7 +8,11 @@ let TasksTable = (props) => {
         <div className={'tasks__wrapper'}>
             <div className={'tasks__table'}>
                 <TableHeader addZero={props.addZero} addTask={props.addTask}/>
-                <TableBody tasks={props.taskList.tasks}/>
+                <TableBody tasks={props.taskList.tasks} 
+                updateTaskStatus={props.updateTaskStatus} 
+                deleteTask={props.deleteTask}
+                changeTask={props.changeTask}
+                addZero={props.addZero}/>
             </div>
         </div>
     );

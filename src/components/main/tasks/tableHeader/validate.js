@@ -1,6 +1,5 @@
 export function validate(timeStart, timeEnd, taskName, addZero) {
     let error = 0;
-
     //validate time from
     if (!!timeStart.current.hours) {
         if (timeStart.current.hours < 0 || timeStart.current.minutes < 0) {
@@ -12,6 +11,9 @@ export function validate(timeStart, timeEnd, taskName, addZero) {
         }
     } else if (!!timeStart.current.minutes) {
         alert('Укажите точное время первой даты');
+        error++
+    } else if(!timeStart.current.hours) {
+        alert('Введите часы в стартовой дате')
         error++
     }
 
@@ -36,7 +38,11 @@ export function validate(timeStart, timeEnd, taskName, addZero) {
     } else if (!!timeEnd.current.minutes) {
         alert('Укажите точное время второй даты!');
         error++
+    } else if (!timeEnd.current.hours) {
+        alert('Введите часы в финальной дате!');
+        error++
     }
+
 
     if(taskName !== String && taskName.length < 1) {
         alert('Укажите название задачи');

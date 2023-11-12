@@ -25,7 +25,7 @@
 .tasks__table {
     width: 80%;
     min-width: 1000px;
-    height: 500px;
+    height: 100%;
     min-width: 400px;
     background: rgba(33, 31, 48, 0.8);
     box-shadow: rgba(19, 18, 27, 0.7) 0px 0px 55px;
@@ -44,6 +44,7 @@
     border-radius: 35px;
     height: 65px;
     margin-bottom: 15px;
+    transition: all .6s ease;
 }
 .table__line.done {
     transition: all .9s ease;
@@ -105,9 +106,14 @@
     flex: 1;
     display: flex;
     justify-content: center;
+    width: 210px;
 }
     button {
         background: none;
+    }
+    .done__button {}
+    .close__button {
+        width: 35px
     }
     .add_icon, .delete_icon, .done_icon {
         width: 35px;
@@ -119,4 +125,11 @@
         height: 40px;
         cursor: pointer;
         margin: 0 20px;
+    }
+    .close_icon {
+        transform: scale(2);
+        transition: transform .6s;
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
     }
