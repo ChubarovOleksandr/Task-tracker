@@ -23,7 +23,7 @@ let Main = () => {
         if(number === null) {
             return number
         }
-        return number < 10 && number > 0 ? '0' + number : number;
+        return number < 10 && number >= 0 ? '0' + number : number;
     }
 
     let date = {
@@ -43,9 +43,9 @@ let Main = () => {
     return ( 
         <div className={'main'}>
             <TimeBlock currentTime={currentTime} /> 
-            <TasksTable currentTime={currentTime} addZero={addZero}/>
-        </div>
-     );
+            <TasksTable currentTime={currentTime} addZero={addZero}/> 
+        </div>                              
+     ); 
 }
  
 export default Main;

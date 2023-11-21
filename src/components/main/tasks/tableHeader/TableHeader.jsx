@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import '../../Main.css'
 import { validate } from './validate';
+import useSound from 'use-sound';
 
 const TableHeader = (props) => {
-
+    
     let timeStart = useRef({
         hours: null,
         minutes: null
@@ -13,6 +14,8 @@ const TableHeader = (props) => {
         hours: null,
         minutes: null
     })
+
+    let [ play ] = useSound();
 
     let taskName = useRef('');
 

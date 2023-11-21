@@ -7,7 +7,12 @@ const CHANGE_TASK = 'CHANGE_TASK';
 
 let initialState = {
     tasks: [
-        
+        {tSH: 12, tSM: null, tEH: 13, tEM: null, taskName: "Watch TV", id: "61c7a334-9663-49e0-add0-a9df1ecbf253", done: false, isChanging: false},
+        {tSH: 12, tSM: null, tEH: 13, tEM: null, taskName: "Buy milk", id: "61c7a334-9663-49e0-add0-fdg6fdh3bv21", done: true, isChanging: false}
+        //tSH - time start hour
+        //tSM - time start minute
+        //tEH - time end hour
+        //tEM - time end minute
     ]
 }
 
